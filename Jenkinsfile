@@ -17,7 +17,7 @@ pipeline {
             }
         }
         stage('Deploy') {
-            stage('Manual Approval') {
+            stage('ManualApproval') {
                 steps {
                     // Menunggu persetujuan manual
                     input message: 'Lanjutkan ke tahap Deploy?'
