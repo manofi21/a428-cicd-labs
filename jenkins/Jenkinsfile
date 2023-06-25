@@ -11,6 +11,9 @@ pipeline {
     stages {
         stage('Build') {
             steps {
+                sh 'apt-get purge --auto-remove nodejs npm'
+                sh 'curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.0/install.sh | bash'
+                sh 'source ~/.bashrc'
                 sh 'npm init'
                 sh 'npm install'
             }
