@@ -25,6 +25,8 @@ pipeline {
         stage('Deploy') {
             steps {
                 sh './jenkins/scripts/deliver.sh'
+                // User bisa melakukan test App's selama se-menit
+                sh 'sleep 1m'
                 sh './jenkins/scripts/kill.sh'
             }
         }
